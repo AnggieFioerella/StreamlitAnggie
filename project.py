@@ -76,7 +76,7 @@ def plotProdMinyakTiapNegara(data, namanegara):
     #Beri atribut pada grafik
     ax.set_title('Jumlah Produksi Minyak Negara {}\npada Tahun {} - {}'
                   .format(namanegara, dataplot['tahun'].min(), dataplot['tahun'].max()),
-                  color = '#000000',
+                  color = 'black',
                   fontsize = 15)
     
     ax.set_xticks(x)
