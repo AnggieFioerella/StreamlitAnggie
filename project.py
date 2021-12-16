@@ -278,7 +278,7 @@ tahun, negara = Konfigurasi(data)
 st.set_page_config(layout = "wide") 
 judul1 = "Statistik Produksi Minyak di Dunia pada Tahun {} - {}".format(min(tahun), max(tahun)) 
 st.title(judul1)
-st.markdown("*Anggie Fiorella*")
+st.markdown("*Anggie Fioerella*")
 
 #image = Image.open('tj_logo.png')
 #st.sidebar.image(image)
