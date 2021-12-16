@@ -59,7 +59,7 @@ def plotProdMinyakTiapNegara(data, namanegara):
     x, y = dataplot['tahun'], dataplot['produksi']
 
     fig, ax = plt.subplots(1, figsize=(15,8))
-    ax.plot(x, y, color = '#fe8a6c', linestyle='-', marker='o')  
+    ax.plot(x, y, color = '#fe6c9d', linestyle='-', marker='o')  
 
     #Hapus frame line
     for spine in ['top','right']:
@@ -76,7 +76,7 @@ def plotProdMinyakTiapNegara(data, namanegara):
     #Beri atribut pada grafik
     ax.set_title('Jumlah Produksi Minyak Negara {}\nPada Tahun {} - {}'
                   .format(namanegara, dataplot['tahun'].min(), dataplot['tahun'].max()),
-                  color = '#f7374b',
+                  color = '#eb75e5',
                   fontsize = 15)
     
     ax.set_xticks(x)
