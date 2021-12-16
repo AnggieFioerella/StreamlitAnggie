@@ -59,7 +59,7 @@ def plotProdMinyakTiapNegara(data, namanegara):
     x, y = dataplot['tahun'], dataplot['produksi']
 
     fig, ax = plt.subplots(1, figsize=(15,8))
-    ax.plot(x, y, color = '#fe6c9d', linestyle='-', marker='o')  
+    ax.plot(x, y, color = '#cf2d71', linestyle='-', marker='o')  
 
     #Hapus frame line
     for spine in ['top','right']:
@@ -74,7 +74,7 @@ def plotProdMinyakTiapNegara(data, namanegara):
         ax.set_ylim(bottom = 0.7*prodoptimum[0], top = 1.2*prodoptimum[1])
     
     #Beri atribut pada grafik
-    ax.set_title('Jumlah Produksi Minyak Negara {}\nPada Tahun {} - {}'
+    ax.set_title('Jumlah Produksi Minyak Negara {}\npada Tahun {} - {}'
                   .format(namanegara, dataplot['tahun'].min(), dataplot['tahun'].max()),
                   color = '#eb75e5',
                   fontsize = 15)
@@ -108,14 +108,14 @@ def plotUrutanProduksiPerTahun(data, year):
     for i in range(len(data['produksi'])):
         if(len(data['produksi']) >= 5):
             if(i < 3):
-                colour.append('#77dd77')
+                colour.append('#f76df5')
             else:
-                colour.append('#b0ffad')
+                colour.append('#f29beb')
         else:
             if(i == 0):
-                colour.append('#77dd77')
+                colour.append('#f76df5')
             else:
-                colour.append('#b0ffad')
+                colour.append('#f29beb')
 
     #Plot grafik
     x, y = data['nama_negara'], data['produksi']
@@ -278,7 +278,7 @@ tahun, negara = Konfigurasi(data)
 st.set_page_config(layout = "wide") 
 judul1 = "Statistik Produksi Minyak di Dunia pada Tahun {} - {}".format(min(tahun), max(tahun)) 
 st.title(judul1)
-st.markdown("*Anggie Fioerella*")
+st.markdown("*12220105 - Anggie Fioerella*")
 
 #image = Image.open('tj_logo.png')
 #st.sidebar.image(image)
@@ -289,7 +289,7 @@ left_col, right_col = st.columns((1,1))
 st.sidebar.subheader("Pengaturan konfigurasi tampilan")
 T = st.sidebar.selectbox("Pilih Tahun", tahun)
 N = st.sidebar.selectbox("Pilih Negara", negara)
-B = st.sidebar.number_input("Jumlah negara yang ditampilkan pada urutan", min_value = 1, max_value = len(negara), value = 10)
+B = st.sidebar.number_input("Pilih Jumlah Negara yang Ditampilkan pada Urutan", min_value = 1, max_value = len(negara), value = 10)
 
 left_col.subheader("Tabel Representasi Data Produksi Minyak Dunia")
 left_col.dataframe(data)
@@ -318,8 +318,7 @@ right_col.pyplot(fig3)
 maxdataproduksi, mindataproduksi, data0minyak = dataSummary(data)
 left_col.subheader('Jumlah Produksi Minyak Terbesar di Dunia dari Tahun ke Tahun')
 left_col.dataframe(maxdataproduksi)
-right_col.subheader('Jumlah Produksi Minyak Paling Rendah di Dunia dari Tahun ke Tahun')
+right_col.subheader('Jumlah Produksi Minyak Terendah di Dunia dari Tahun ke Tahun')
 right_col.dataframe(mindataproduksi)
-
-left_col.subheader('Negara yang Tidak Menghasilkan Minyak Pada Tahun {} - {}'.format(min(tahun), max(tahun)))
+left_col.subheader('Negara yang Tidak Menghasilkan Minyak pada Tahun {} - {}'.format(min(tahun), max(tahun)))
 left_col.dataframe(data0minyak)
