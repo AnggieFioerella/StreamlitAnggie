@@ -145,8 +145,8 @@ def plotUrutanProduksiPerTahun(data, year):
     return fig, ax 
 
 def UrutanProduksiKumulatif(data, limit):
-    datasorting = data.groupby(['countryname'])['oilproduction'].sum().reset_index()
-    datasorting = datasorting.sort_values(by = ['oilproduction'], ascending = False)\
+    datasorting = data.groupby(['nama_negara'])['produksi'].sum().reset_index()
+    datasorting = datasorting.sort_values(by = ['produksi'], ascending = False)\
                             .reset_index(drop = True).iloc[0:limit]
     return datasorting
 
